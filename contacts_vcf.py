@@ -39,7 +39,8 @@ for line in in_vcf:
             line_multiple_lines = ''
     else:
         if line.find('ENCODING=QUOTED-PRINTABLE') != -1:
-            line = line.replace(';CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE','')
+            line = line.replace(';ENCODING=QUOTED-PRINTABLE','')
+            line = line.replace(';CHARSET=UTF-8','')
             if line[-1] == '=':
                 line_multiple_lines = line[0:-1]
             else:
